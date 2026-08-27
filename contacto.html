@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contacto — CompuYá Ecuador</title>
   <meta name="description"
-    content="Contáctanos para computadores seminuevos, diseño web, redes sociales o branding. CompuYá — Ecuador.">
+    content="Contáctanos para computadoras nuevas y seminuevas, diseño web, redes sociales o branding. CompuYá — Ecuador.">
   <link rel="canonical" href="https://compuya.com.ec/contacto.html">
   <link rel="icon" href="img/logo.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -141,7 +141,7 @@
 </head>
 
 <body>
-    <header class="header" id="header" role="banner">
+      <header class="header" id="header" role="banner">
     <div class="container header__inner">
       <a href="index.html" class="header__logo" aria-label="CompuYá - Inicio">
         <img src="img/logo.png" alt="CompuYá Logo">
@@ -192,6 +192,8 @@
     <a href="contacto.html" class="mobile-nav__link">Contacto</a>
     <a href="contacto.html" class="btn btn-primary btn-lg" style="margin-top: var(--space-4);">Cotizar ahora</a>
   </div>
+
+  
   
 
   <main>
@@ -235,14 +237,17 @@
             </div>
             <p
               style="color:var(--text-muted);font-size:var(--fs-sm);line-height:var(--lh-relaxed);margin-top:var(--space-8);">
-              Especializada en computadores seminuevos, diseño de páginas web profesionales, posicionamiento SEO y
+              Especializada en computadoras nuevas y seminuevas, diseño de páginas web profesionales, posicionamiento SEO y
               estrategias de marketing digital. Ayudamos a empresas y emprendedores a aumentar su visibilidad online y
               mejorar sus ventas.</p>
           </div>
           <!-- Form -->
           <div class="contact-form">
             <h3>Envíanos un mensaje</h3>
-            <form id="contact-form" onsubmit="sendWhatsApp(event)">
+            <form id="contact-form">
+              <!-- Anti-spam Honeypot -->
+              <input type="text" name="_honeypot" style="display:none" tabindex="-1" autocomplete="off">
+
               <div class="form-group"><label for="name">Nombre Completo</label><input type="text" id="name" required
                   placeholder="Tu nombre"></div>
               <div class="form-group"><label for="email">Correo electrónico</label><input type="email" id="email"
@@ -253,6 +258,7 @@
               </div>
               <div class="form-group"><label for="subject">¿Sobre qué te gustaría hablar?</label><select id="subject">
                   <option value="computadores">Computadores</option>
+                  <option value="financiacion">Financiación / Crédito</option>
                   <option value="web">Diseño web</option>
                   <option value="social">Redes sociales</option>
                   <option value="branding">Branding</option>
@@ -283,7 +289,7 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand"><img src="img/logo.png" alt="CompuYá">
-          <p>Computadores seminuevos y servicios digitales en Ecuador.</p>
+          <p>computadoras nuevas y seminuevas y servicios digitales en Ecuador.</p>
         </div>
         <div>
           <h4 class="footer__col-title">Productos</h4>
@@ -317,18 +323,7 @@
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
     </svg></button>
   <script src="js/app.js"></script>
-  <script>
-    function sendWhatsApp(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
-      const text = `Hola, soy ${name}.%0A%0AEmail: ${email}%0ATeléfono: ${phone}%0ATema: ${subject}%0A%0A${message}`;
-      window.open(`https://wa.me/593992292199?text=${text}`, '_blank');
-    }
-  </script>
+  
 </body>
 
 </html>

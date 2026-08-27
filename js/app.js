@@ -57,17 +57,25 @@
 
   // ─── Smooth scroll for anchor links ───
   function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href*="#"]').forEach(anchor => {
       anchor.addEventListener('click', (e) => {
-        const target = document.querySelector(anchor.getAttribute('href'));
-        if (!target) return;
-        e.preventDefault();
-        const headerOffset = 80;
-        const elementPosition = target.getBoundingClientRect().top + window.scrollY;
-        window.scrollTo({
-          top: elementPosition - headerOffset,
-          behavior: 'smooth'
-        });
+        try {
+          const url = new URL(anchor.href, window.location.href);
+          // Only smooth scroll if it's the same page
+          if (url.pathname === window.location.pathname && url.hash) {
+            const targetId = url.hash.substring(1);
+            const target = document.getElementById(targetId);
+            if (!target) return;
+            
+            e.preventDefault();
+            const headerOffset = 80;
+            const elementPosition = target.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({
+              top: elementPosition - headerOffset,
+              behavior: 'smooth'
+            });
+          }
+        } catch(err) {}
       });
     });
   }
@@ -171,14 +179,19 @@
     const sections = document.querySelectorAll('section[id]');
     if (!sections.length) return;
 
-    const navLinks = document.querySelectorAll('.nav__link[href^="#"]');
+    const navLinks = document.querySelectorAll('.nav__link[href*="#"]');
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute('id');
           navLinks.forEach(link => {
-            link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            try {
+              const url = new URL(link.href, window.location.href);
+              if (url.pathname === window.location.pathname) {
+                link.classList.toggle('active', url.hash === `#${id}`);
+              }
+            } catch(err) {}
           });
         }
       });
@@ -197,31 +210,46 @@
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries());
+      // Anti-spam Honeypot Check
+      const honeypot = form.querySelector('input[name="_honeypot"]');
+      if (honeypot && honeypot.value) {
+        console.warn("Spam detected. Aborting form submission.");
+        form.reset();
+        return;
+      }
 
-      // Build WhatsApp message
-      const msg = `Hola CompuYá, soy ${data.name}.\n` +
-        `📧 Correo: ${data.email}\n` +
-        `📱 Teléfono: ${data.phone}\n` +
-        `💻 Necesito: ${data.message}\n` +
-        `💰 Presupuesto: ${data.budget}\n` +
-        `📦 Cantidad: ${data.quantity}`;
+      // Fetch values by ID since they might lack 'name' attributes
+      const name = document.getElementById('name') ? document.getElementById('name').value : '';
+      const email = document.getElementById('email') ? document.getElementById('email').value : '';
+      const phone = document.getElementById('phone') ? document.getElementById('phone').value : '';
+      const subject = document.getElementById('subject') ? document.getElementById('subject').value : '';
+      const message = document.getElementById('message') ? document.getElementById('message').value : '';
+
+      // Build WhatsApp message securely
+      const msg = `Hola CompuYá, soy ${name}.\n\n` +
+        `📧 Correo: ${email}\n` +
+        `📱 Teléfono: ${phone}\n` +
+        `🏷️ Tema: ${subject}\n\n` +
+        `💬 Mensaje: ${message}`;
 
       const whatsappUrl = `https://wa.me/593992292199?text=${encodeURIComponent(msg)}`;
       window.open(whatsappUrl, '_blank');
 
       // Show success state
       const btn = form.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
-      btn.textContent = '✓ Mensaje enviado';
-      btn.style.background = 'var(--success)';
+      if (btn) {
+        const originalText = btn.textContent;
+        btn.textContent = '✓ Mensaje enviado';
+        btn.style.background = 'var(--success)';
 
-      setTimeout(() => {
-        btn.textContent = originalText;
-        btn.style.background = '';
+        setTimeout(() => {
+          btn.textContent = originalText;
+          btn.style.background = '';
+          form.reset();
+        }, 3000);
+      } else {
         form.reset();
-      }, 3000);
+      }
     });
   }
 
