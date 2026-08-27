@@ -1,0 +1,686 @@
+/* ============================================
+   CompuYá — Component Styles
+   ============================================ */
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--fs-base);
+  font-weight: var(--fw-semibold);
+  line-height: 1;
+  border-radius: var(--radius-lg);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--gradient-cta);
+  color: var(--text-on-cta);
+  box-shadow: 0 4px 15px rgba(var(--cta-rgb), 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(var(--cta-rgb), 0.4),
+              0 0 30px rgba(var(--cta-rgb), 0.15);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-on-dark);
+  border-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--text-on-primary);
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+  background: #20BD5A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+.btn-lg {
+  padding: var(--space-4) var(--space-8);
+  font-size: var(--fs-md);
+  border-radius: var(--radius-xl);
+}
+
+.btn-sm {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--fs-sm);
+  border-radius: var(--radius-md);
+}
+
+.btn-icon {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--radius-lg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Product Cards ─── */
+.product-card {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(var(--primary-rgb), 0.2);
+}
+
+.product-card__badge {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: 2;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+}
+
+.product-card__badge--sale {
+  background: var(--danger);
+  color: #fff;
+}
+
+.product-card__badge--new {
+  background: var(--gradient-primary);
+  color: #fff;
+}
+
+.product-card__badge--featured {
+  background: var(--warning);
+  color: #1A1A2E;
+}
+
+.product-card__image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--bg-surface);
+}
+
+.product-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.product-card:hover .product-card__image {
+  transform: scale(1.08);
+}
+
+.product-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent 60%);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-4);
+}
+
+.product-card:hover .product-card__overlay {
+  opacity: 1;
+}
+
+.product-card__body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.product-card__category {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.product-card__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+}
+
+.product-card__specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-1);
+}
+
+.product-card__spec {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-1) var(--space-2);
+  background: var(--bg-surface);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.product-card__pricing {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin-top: auto;
+  padding-top: var(--space-3);
+}
+
+.product-card__price {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-bold);
+  color: var(--primary);
+}
+
+.product-card__price-original {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--text-light);
+  text-decoration: line-through;
+}
+
+.product-card__action {
+  margin-top: var(--space-3);
+}
+
+/* ─── Service Cards ─── */
+.service-card {
+  position: relative;
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-base);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: rgba(var(--primary-rgb), 0.2);
+}
+
+.service-card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.service-card:hover .service-card__image {
+  transform: scale(1.05);
+}
+
+.service-card__body {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.service-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  background: var(--gradient-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: var(--fs-xl);
+  flex-shrink: 0;
+}
+
+.service-card__title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+}
+
+.service-card__desc {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-relaxed);
+}
+
+.service-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--primary);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-sm);
+  margin-top: auto;
+  transition: gap var(--transition-base);
+}
+
+.service-card:hover .service-card__link {
+  gap: var(--space-3);
+}
+
+/* ─── Section Header ─── */
+.section-header {
+  text-align: center;
+  max-width: 720px;
+  margin-inline: auto;
+  margin-bottom: var(--space-12);
+}
+
+.section-header__overline {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-widest);
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+  display: block;
+}
+
+.section-header__title {
+  margin-bottom: var(--space-4);
+}
+
+.section-header__desc {
+  color: var(--text-muted);
+  font-size: var(--fs-md);
+  line-height: var(--lh-relaxed);
+}
+
+/* ─── Stats Counter ─── */
+.stat-card {
+  text-align: center;
+  padding: var(--space-6);
+}
+
+.stat-card__number {
+  font-family: var(--font-mono);
+  font-size: var(--fs-4xl);
+  font-weight: var(--fw-extrabold);
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.stat-card__label {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  font-weight: var(--fw-medium);
+}
+
+/* ─── Step Card (Process) ─── */
+.step-card {
+  text-align: center;
+  padding: var(--space-8) var(--space-6);
+  background: var(--bg-card);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-base);
+  position: relative;
+}
+
+.step-card:hover {
+  border-color: rgba(var(--primary-rgb), 0.2);
+  box-shadow: var(--shadow-md);
+}
+
+.step-card__number {
+  font-family: var(--font-mono);
+  font-size: var(--fs-5xl);
+  font-weight: var(--fw-extrabold);
+  color: rgba(var(--primary-rgb), 0.1);
+  line-height: 1;
+  margin-bottom: var(--space-4);
+}
+
+.step-card__title {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-3);
+}
+
+.step-card__desc {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  line-height: var(--lh-relaxed);
+}
+
+/* ─── Reason Cards (Why CompuYá) ─── */
+.reason-card {
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.reason-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--primary-rgb), 0.2);
+  box-shadow: var(--shadow-md);
+}
+
+.reason-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-xl);
+  background: rgba(var(--primary-rgb), 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--primary);
+  transition: all var(--transition-base);
+}
+
+.reason-card:hover .reason-card__icon {
+  background: var(--gradient-primary);
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.reason-card__title {
+  font-size: var(--fs-base);
+  font-weight: var(--fw-bold);
+}
+
+.reason-card__desc {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  line-height: var(--lh-relaxed);
+}
+
+/* ─── Badge ─── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--ls-wide);
+}
+
+.badge--success {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+
+.badge--danger {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+}
+
+.badge--primary {
+  background: rgba(var(--primary-rgb), 0.1);
+  color: var(--primary);
+}
+
+/* ─── Form ─── */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.form-label {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--text-secondary);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-base);
+  background: var(--bg-white);
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--text-light);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* ─── Brand Carousel ─── */
+.brands-track {
+  display: flex;
+  gap: var(--space-12);
+  animation: scrollX 30s linear infinite;
+  width: max-content;
+}
+
+.brands-track:hover {
+  animation-play-state: paused;
+}
+
+.brand-logo {
+  height: 40px;
+  width: auto;
+  opacity: 0.5;
+  filter: grayscale(100%);
+  transition: all var(--transition-base);
+  flex-shrink: 0;
+}
+
+.brand-logo:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* ─── Filters ─── */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  justify-content: center;
+  margin-bottom: var(--space-8);
+}
+
+.filter-btn {
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--text-muted);
+  background: var(--bg-surface);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-btn:hover {
+  color: var(--primary);
+  background: rgba(var(--primary-rgb), 0.05);
+}
+
+.filter-btn.active {
+  color: var(--text-on-primary);
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* ─── Search Input ─── */
+.search-wrap {
+  position: relative;
+  max-width: 400px;
+  margin-inline: auto;
+  margin-bottom: var(--space-6);
+}
+
+.search-wrap__icon {
+  position: absolute;
+  left: var(--space-4);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  pointer-events: none;
+}
+
+.search-wrap input {
+  padding-left: var(--space-10);
+}
+
+/* ─── WhatsApp Float ─── */
+.whatsapp-float {
+  position: fixed;
+  bottom: var(--space-6);
+  right: var(--space-6);
+  z-index: var(--z-fixed);
+  width: 60px;
+  height: 60px;
+  border-radius: var(--radius-full);
+  background: #25D366;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1) translateY(-4px);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.5);
+}
+
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* ─── Scroll To Top ─── */
+.scroll-top {
+  position: fixed;
+  bottom: var(--space-6);
+  right: calc(var(--space-6) + 70px);
+  z-index: var(--z-fixed);
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--bg-dark);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all var(--transition-base);
+  cursor: pointer;
+  border: none;
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.scroll-top:hover {
+  background: var(--primary);
+  transform: translateY(-4px);
+}
+
+/* ─── Glassmorphism Card ─── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+}
+
+/* ─── Divider ─── */
+.divider {
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: var(--radius-full);
+  margin-inline: auto;
+}

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creamos tu Marca — Branding Profesional — CompuYá</title>
+  <meta name="description"
+    content="Creamos marcas que generan confianza y venden más. Identidad visual, verbal y universo marcario completo. Branding profesional. CompuYá Digital.">
+  <link rel="canonical" href="https://compuya.com.ec/creamos-tu-marca.html">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css?v=6">
+  <link rel="stylesheet" href="css/base.css?v=6">
+  <link rel="stylesheet" href="css/animations.css?v=6">
+  <link rel="stylesheet" href="css/components.css?v=6">
+  <link rel="stylesheet" href="css/layout.css?v=6">
+  <style>
+    .page-hero {
+      padding-top: calc(var(--header-height) + var(--space-16));
+      padding-bottom: var(--space-12);
+      background: var(--bg-surface);
+      text-align: center;
+    }
+
+    .deliverable-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      transition: all var(--transition-base);
+    }
+
+    .deliverable-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+      border-color: var(--primary);
+    }
+
+    .deliverable-card__title {
+      font-size: var(--fs-lg);
+      font-weight: var(--fw-bold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-3);
+    }
+
+    .deliverable-card__desc {
+      font-size: var(--fs-sm);
+      color: var(--text-muted);
+      line-height: var(--lh-relaxed);
+    }
+
+    .process-step {
+      display: flex;
+      gap: var(--space-6);
+      align-items: flex-start;
+      padding: var(--space-8);
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      transition: all var(--transition-base);
+    }
+
+    .process-step:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .process-step__num {
+      font-family: var(--font-mono);
+      font-size: var(--fs-3xl);
+      font-weight: var(--fw-extrabold);
+      color: var(--primary);
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .process-step__title {
+      font-size: var(--fs-lg);
+      font-weight: var(--fw-bold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .process-step__desc {
+      font-size: var(--fs-sm);
+      color: var(--text-muted);
+      line-height: var(--lh-relaxed);
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      margin-bottom: var(--space-3);
+      overflow: hidden;
+    }
+
+    .faq-item__q {
+      width: 100%;
+      text-align: left;
+      padding: var(--space-5) var(--space-6);
+      font-size: var(--fs-base);
+      font-weight: var(--fw-semibold);
+      color: var(--text-primary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    .faq-item__q:hover {
+      color: var(--primary);
+    }
+
+    .faq-item__q span {
+      transition: transform var(--transition-base);
+      font-size: var(--fs-lg);
+    }
+
+    .faq-item.open .faq-item__q span {
+      transform: rotate(45deg);
+    }
+
+    .faq-item__a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 var(--space-6);
+    }
+
+    .faq-item.open .faq-item__a {
+      max-height: 500px;
+      padding: 0 var(--space-6) var(--space-5);
+    }
+
+    .faq-item__a p {
+      color: var(--text-muted);
+      font-size: var(--fs-sm);
+      line-height: var(--lh-relaxed);
+    }
+  </style>
+</head>
+
+<body>
+    <header class="header" id="header" role="banner">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo" aria-label="CompuYá - Inicio">
+        <img src="img/logo.png" alt="CompuYá Logo">
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html" class="nav__link">Inicio</a>
+        <a href="index.html#destacados" class="nav__link">Destacados</a>
+        <a href="index.html#computadores" class="nav__link">Computadores</a>
+        <div class="nav__dropdown">
+          <a href="index.html#servicios" class="nav__link">Servicios <svg width="12" height="12" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" style="margin-top: 2px;">
+              <path d="M6 9l6 6 6-6" />
+            </svg></a>
+          <div class="nav__dropdown-content">
+            <a href="diseno-web.html">Diseño Web</a>
+            <a href="redes-sociales.html">Redes Sociales</a>
+            <a href="creamos-tu-marca.html">Creación de Marca</a>
+            <a href="avilchat.html">Avilchat (Bot IA)</a>
+          </div>
+        </div>
+        <a href="index.html#marcas" class="nav__link">Marcas</a>
+        <a href="contacto.html" class="nav__link">Contacto</a>
+      </nav>
+
+      <div class="header__cta">
+        <a href="contacto.html" class="btn btn-primary btn-sm">Cotizar ahora</a>
+        <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Menú móvil">
+    <a href="index.html" class="mobile-nav__link">Inicio</a>
+    <a href="index.html#destacados" class="mobile-nav__link">Destacados</a>
+    <a href="index.html#computadores" class="mobile-nav__link">Computadores</a>
+    <a href="index.html#servicios" class="mobile-nav__link">Servicios</a>
+    <a href="diseno-web.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Diseño Web</a>
+    <a href="redes-sociales.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Redes Sociales</a>
+    <a href="creamos-tu-marca.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Creación de Marca</a>
+    <a href="avilchat.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Avilchat (Bot IA)</a>
+    <a href="index.html#marcas" class="mobile-nav__link">Marcas</a>
+    <a href="contacto.html" class="mobile-nav__link">Contacto</a>
+    <a href="contacto.html" class="btn btn-primary btn-lg" style="margin-top: var(--space-4);">Cotizar ahora</a>
+  </div>
+  
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="overline" style="display:block;margin-bottom:var(--space-3);">CREAMOS TU MARCA</span>
+        <h1 style="max-width:800px;margin:0 auto var(--space-6);">Creamos marcas que generan confianza y venden más</h1>
+        <p class="lead" style="max-width:700px;margin:0 auto var(--space-8);">Identidades y conceptos desarrollados
+          hasta el último aplicativo: un universo de marca completo y coherente.</p>
+        <a href="https://wa.me/593992292199?text=Hola,%20quiero%20información%20sobre%20Branding" target="_blank"
+          rel="noopener" class="btn btn-primary btn-lg">Hablar con un asesor</a>
+      </div>
+    </section>
+
+    <!-- STATEMENT -->
+    <section class="section">
+      <div class="container container-narrow text-center reveal">
+        <span class="overline" style="display:block;margin-bottom:var(--space-4);">El movimiento</span>
+        <p class="lead" style="font-size:var(--fs-xl);line-height:var(--lh-relaxed);">Convertimos la claridad
+          estratégica en un universo de marca: conceptos con base conceptual profunda, desarrollados en cada aplicativo
+          — una identidad que envejece bien.</p>
+      </div>
+    </section>
+
+    <!-- ENTREGABLES -->
+    <section class="section section-surface">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-header__overline">Entregables</span>
+          <h2 class="section-header__title">Lo que incluye nuestro servicio</h2>
+        </div>
+        <div class="grid grid-3 gap-6 stagger">
+          <div class="deliverable-card reveal">
+            <h4 class="deliverable-card__title">Concepto de marca</h4>
+            <p class="deliverable-card__desc">La base conceptual profunda: una idea central que gobierna cada decisión
+              verbal y visual.</p>
+          </div>
+          <div class="deliverable-card reveal">
+            <h4 class="deliverable-card__title">Identidad verbal</h4>
+            <p class="deliverable-card__desc">Naming, tono de voz y arquitectura de mensajes: cómo habla la marca y qué
+              declara.</p>
+          </div>
+          <div class="deliverable-card reveal">
+            <h4 class="deliverable-card__title">Identidad visual</h4>
+            <p class="deliverable-card__desc">Logo, color, tipografía y sistema gráfico: un lenguaje distintivo,
+              memorable y coherente.</p>
+          </div>
+          <div class="deliverable-card reveal">
+            <h4 class="deliverable-card__title">Universo marcario</h4>
+            <p class="deliverable-card__desc">El sistema completo desarrollado para los diferentes aplicativos: digital,
+              impreso, empaque y espacios.</p>
+          </div>
+          <div class="deliverable-card reveal">
+            <h4 class="deliverable-card__title">Sistema y manual</h4>
+            <p class="deliverable-card__desc">El manual vivo que gobierna cada aplicación: la coherencia convertida en
+              método.</p>
+          </div>
+          <div class="deliverable-card reveal">
+            <h4 class="deliverable-card__title">Lanzamiento</h4>
+            <p class="deliverable-card__desc">La identidad llevada al mercado con dirección: piezas, campaña y
+              acompañamiento del despliegue.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-header__overline">La metodología</span>
+          <h2 class="section-header__title">Nuestro proceso</h2>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:var(--space-6);max-width:800px;margin:0 auto;"
+          class="stagger">
+          <div class="process-step reveal">
+            <div class="process-step__num">01</div>
+            <div>
+              <h4 class="process-step__title">Concepto</h4>
+              <p class="process-step__desc">La base conceptual profunda: el posicionamiento convertido en una idea de
+                marca con sentido.</p>
+            </div>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-step__num">02</div>
+            <div>
+              <h4 class="process-step__title">Universo marcario</h4>
+              <p class="process-step__desc">Identidad verbal y visual desarrolladas como sistema: reconocibles en cada
+                punto de contacto.</p>
+            </div>
+          </div>
+          <div class="process-step reveal">
+            <div class="process-step__num">03</div>
+            <div>
+              <h4 class="process-step__title">Aplicativos y lanzamiento</h4>
+              <p class="process-step__desc">El universo llevado a la realidad — digital, empaque, espacios y piezas —
+                con el manual que lo gobierna.</p>
+            </div>
+          </div>
+        </div>
+        <p class="text-center reveal"
+          style="margin-top:var(--space-8);color:var(--text-muted);font-size:var(--fs-sm);max-width:600px;margin-inline:auto;">
+          Cada marca recibe acompañamiento uno a uno: el proceso se adapta a los requerimientos del negocio.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-surface">
+      <div class="container container-narrow">
+        <div class="section-header reveal">
+          <span class="section-header__overline">Preguntas frecuentes</span>
+          <h2 class="section-header__title">Resolvemos tus dudas</h2>
+        </div>
+        <div class="reveal">
+          <div class="faq-item open"><button class="faq-item__q"
+              onclick="this.parentElement.classList.toggle('open')">¿Qué incluye el servicio de branding?
+              <span>+</span></button>
+            <div class="faq-item__a">
+              <p>Concepto de marca, identidad verbal (naming, tono, mensajes), identidad visual (logo, color,
+                tipografía, sistema gráfico), universo marcario, manual de marca y lanzamiento.</p>
+            </div>
+          </div>
+          <div class="faq-item"><button class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">¿Qué
+              significa identidad con base conceptual? <span>+</span></button>
+            <div class="faq-item__a">
+              <p>Cada decisión visual y verbal nace de un concepto estratégico con sentido de negocio — la identidad
+                comunica el posicionamiento, en lugar de decorarlo. Por eso envejece bien.</p>
+            </div>
+          </div>
+          <div class="faq-item"><button class="faq-item__q"
+              onclick="this.parentElement.classList.toggle('open')">¿Trabajan rebranding de marcas existentes?
+              <span>+</span></button>
+            <div class="faq-item__a">
+              <p>Sí. Acompañamos tanto la creación de marcas nuevas como la evolución de marcas consolidadas que buscan
+                un sistema de identidad a la altura de su negocio.</p>
+            </div>
+          </div>
+          <div class="faq-item"><button class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">¿Cómo
+              se mantiene la coherencia después del lanzamiento? <span>+</span></button>
+            <div class="faq-item__a">
+              <p>Con el sistema de marca: un manual vivo de uso y aplicación, sostenido por nuestra dirección en cada
+                pieza que se produce.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark text-center">
+      <div class="container">
+        <h2 style="color:#fff;margin-bottom:var(--space-4);">¿Listo para crear una marca memorable?</h2>
+        <p style="color:var(--text-on-dark);margin-bottom:var(--space-8);">Asesoría personalizada para llevar tu marca
+          al siguiente nivel.</p>
+        <a href="https://wa.me/593992292199?text=Hola,%20quiero%20información%20sobre%20Branding" target="_blank"
+          rel="noopener" class="btn btn-primary btn-lg">Hablar con un asesor</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><img src="img/logo.png" alt="CompuYá">
+          <p>Computadores seminuevos y servicios digitales en Ecuador.</p>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Productos</h4>
+          <div class="footer__links"><a href="index.html#ofertas" class="footer__link">Ofertas</a><a
+              href="index.html#computadores" class="footer__link">Computadores</a></div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Servicios</h4>
+          <div class="footer__links"><a href="diseno-web.html" class="footer__link">Diseño Web</a><a
+              href="redes-sociales.html" class="footer__link">Redes Sociales</a><a href="creamos-tu-marca.html"
+              class="footer__link">Branding</a></div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Empresa</h4>
+          <div class="footer__links"><a href="nosotros.html" class="footer__link">Nosotros</a><a href="contacto.html"
+              class="footer__link">Contacto</a></div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© <span id="current-year">2024</span> CompuYá — Ecuador.</p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/593992292199" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg
+      width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+      <path
+        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+    </svg></a>
+  <button class="scroll-top" aria-label="Subir"><svg width="20" height="20" fill="none" stroke="currentColor"
+      viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg></button>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

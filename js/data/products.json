@@ -1,0 +1,466 @@
+[
+  {
+    "id": "aio-compu",
+    "name": "Computadora All In One Optiplex",
+    "category": "computadoras",
+    "image": "img/productos/AIO- COMPU.jpg",
+    "specs": [
+      "Intel Core i5",
+      "SSD 1000GB",
+      "RAM 8GB",
+      "Monitor LED 24\" WS",
+      "Cámara Integrada",
+      "WiFi integrado"
+    ],
+    "description": "Computadora de escritorio Dell Optiplex All In One. Todo en un solo equipo.",
+    "featured": true
+  },
+  {
+    "id": "audifonos",
+    "name": "Audífonos Gamer LED Xtrike Me",
+    "category": "accesorios",
+    "image": "img/productos/AUDIFONOS.jpg",
+    "specs": [
+      "Iluminación LED",
+      "Diseño Ergonómico",
+      "Micrófono integrado",
+      "Xtrike Me"
+    ],
+    "description": "Audífonos para gaming con iluminación LED y micrófono integrado."
+  },
+  {
+    "id": "canon-g3110",
+    "name": "Impresora Multifunción Canon G3110",
+    "category": "impresoras",
+    "image": "img/productos/CANON G3110.jpg",
+    "specs": [
+      "Conexión WiFi",
+      "Sistema Continuo Original",
+      "Multifunción (Imprime, Copia, Escanea)"
+    ],
+    "description": "Impresora multifunción con sistema de tanque de tinta continuo original y conectividad inalámbrica."
+  },
+  {
+    "id": "celeron-laptops",
+    "name": "Laptop HP Celeron / AMD",
+    "category": "laptops",
+    "image": "img/productos/CELERON-LAPTOPS.jpg",
+    "specs": [
+      "Intel Celeron / AMD",
+      "SSD 120GB",
+      "RAM 8GB",
+      "Pantalla 14\" - 15\"",
+      "+ Regalos (Mouse, Audífono, WiFi)"
+    ],
+    "description": "Laptop HP ideal para tareas básicas y ofimática. Incluye obsequios."
+  },
+  {
+    "id": "combo-04",
+    "name": "Combo 3 en 1 Elephant Multimedia",
+    "category": "accesorios",
+    "image": "img/productos/COMBO 04.jpg",
+    "specs": [
+      "Teclado",
+      "Mouse",
+      "Parlantes",
+      "Elephant Combo Multimedia"
+    ],
+    "description": "Combo de accesorios 3 en 1 para tu computadora: teclado, mouse y parlantes multimedia.",
+    "featured": true
+  },
+  {
+    "id": "combo-6ta-semi",
+    "name": "Combo PC i5 6ta Gen + Impresora",
+    "category": "combos",
+    "image": "img/productos/COMBO 6TACOMBO SEMI.jpg",
+    "specs": [
+      "Intel Core i5 (6ta Gen)",
+      "SSD 250GB",
+      "RAM 8GB",
+      "Monitor LCD 19\" WS",
+      "+ Impresora EPSON L1250",
+      "+ Regalos (Audífonos, Webcam, WiFi, Resma de papel)"
+    ],
+    "description": "Completo combo de computadora de escritorio con impresora Epson L1250 y varios regalos."
+  },
+  {
+    "id": "combo-gamers-acces",
+    "name": "Combo PC Gamer Aquaron ARGB",
+    "category": "combos",
+    "image": "img/productos/COMBO GAMERS ACCES.jpg",
+    "specs": [
+      "Case Aquaron ARGB",
+      "Parlantes Sonicgear Quatro 2",
+      "Mouse X Craft 1200 DPI",
+      "Tempered Glass",
+      "Gratis Audífonos"
+    ],
+    "description": "Combo gamer de alto rendimiento con case de vidrio templado, periféricos y accesorios."
+  },
+  {
+    "id": "combo-hp-6ta-semi",
+    "name": "Combo PC HP i5 6ta Gen + Impresora",
+    "category": "combos",
+    "image": "img/productos/COMBO HP 6TACOMBO SEMI.jpg",
+    "specs": [
+      "Intel Core i5 (6ta Gen)",
+      "SSD 250GB",
+      "RAM 8GB",
+      "Monitor LCD 19\" WS",
+      "+ Multifunción HP 583",
+      "+ Regalos (Audífonos, Webcam, WiFi, Resma de papel)"
+    ],
+    "description": "Combo computadora HP de escritorio con impresora multifunción HP y obsequios.",
+    "featured": true
+  },
+  {
+    "id": "cooling-pad",
+    "name": "Cooling Pad Speedmind",
+    "category": "accesorios",
+    "image": "img/productos/COOLING PAD.jpg",
+    "specs": [
+      "Base Refrigerante",
+      "Speedmind"
+    ],
+    "description": "Base refrigerante para laptop, ideal para mantener la temperatura óptima."
+  },
+  {
+    "id": "hp-580",
+    "name": "Impresora Multifuncional HP 580",
+    "category": "impresoras",
+    "image": "img/productos/HP 580.jpg",
+    "specs": [
+      "Conexión WiFi",
+      "Sistema Continuo Original",
+      "Multifunción (Imprime, Copia, Escanea)"
+    ],
+    "description": "Impresora multifuncional HP con tanques de tinta."
+  },
+  {
+    "id": "i3-4ta-cpu",
+    "name": "CPU Intel Core i3 4ta Gen",
+    "category": "cpus",
+    "image": "img/productos/I3 4TA- CPU.jpg",
+    "specs": [
+      "Intel Core i3 (4ta Gen)",
+      "HDD 500GB",
+      "RAM 10GB",
+      "Incluye Teclado, Mouse, Parlantes"
+    ],
+    "description": "CPU de escritorio reacondicionado disponible en marcas Lenovo, HP, Dell o Xtratech."
+  },
+  {
+    "id": "i5-12ava-dell-micro",
+    "name": "Computadora Dell Micro i5 12va Gen",
+    "category": "computadoras",
+    "image": "img/productos/I5 12AVA DELL MICRO- COMPU.jpg",
+    "specs": [
+      "Intel Core i5 (12va Gen)",
+      "SSD 250GB",
+      "RAM 8GB",
+      "Monitor LCD 22\" WS",
+      "+ Regalos (WiFi, Webcam)"
+    ],
+    "description": "Computadora Dell en formato micro, incluye monitor de 22 pulgadas, teclado, mouse y parlantes."
+  },
+  {
+    "id": "i5-12ava-cpu",
+    "name": "CPU Intel Core i5 12va Gen",
+    "category": "cpus",
+    "image": "img/productos/I5 12AVA- CPU.jpg",
+    "specs": [
+      "Intel Core i5 (12va Gen)",
+      "SSD 250GB",
+      "RAM 8GB",
+      "Incluye Teclado, Mouse, Parlantes"
+    ],
+    "description": "CPU potente de 12va generación, disponible en Lenovo, HP, Dell o Xtratech."
+  },
+  {
+    "id": "i5-2da-compu",
+    "name": "Computadora i5 2da Gen",
+    "category": "computadoras",
+    "image": "img/productos/I5 2DA- COMPU.jpg",
+    "specs": [
+      "Intel Core i5 (2.5 Ghz)",
+      "SSD 250GB",
+      "HDD 250GB",
+      "RAM 10GB",
+      "Monitor LCD 19\" WS",
+      "+ Regalos (WiFi, Webcam, Audífonos)"
+    ],
+    "description": "Computadora de escritorio completa con monitor de 19\", teclado, mouse, parlantes y obsequios."
+  },
+  {
+    "id": "i5-2da-cpu",
+    "name": "CPU Intel Core i5 2da Gen",
+    "category": "cpus",
+    "image": "img/productos/I5 2DA- CPU.jpg",
+    "specs": [
+      "Intel Core i5 (2.5 Ghz)",
+      "SSD 250GB",
+      "HDD 250GB",
+      "RAM 10GB",
+      "Incluye Teclado, Mouse, Parlantes"
+    ],
+    "description": "CPU de escritorio económico, incluye periféricos básicos."
+  },
+  {
+    "id": "i5-2da-laptops",
+    "name": "Laptop HP i5 (Generación Anterior)",
+    "category": "laptops",
+    "image": "img/productos/I5 2DA-LAPTOPS.jpg",
+    "specs": [
+      "Intel Core i5",
+      "SSD 500GB",
+      "RAM 16GB",
+      "Pantalla 14\" - 15\"",
+      "+ Regalos (Mouse, Audífono, WiFi)"
+    ],
+    "description": "Laptop HP con procesador Core i5 y excelente memoria RAM para múltiples tareas."
+  },
+  {
+    "id": "i5-4ta-compu",
+    "name": "Computadora i5 4ta Gen",
+    "category": "computadoras",
+    "image": "img/productos/I5 4TA- COMPU.jpg",
+    "specs": [
+      "Intel Core i5 (3.5 Ghz)",
+      "SSD 250GB",
+      "HDD 250GB",
+      "RAM 12GB",
+      "Monitor LCD 19\" WS",
+      "+ Regalos (Webcam, WiFi, Audífonos)"
+    ],
+    "description": "Equipo de escritorio HP ProDesk o similar, ideal para oficina o el hogar."
+  },
+  {
+    "id": "i5-4ta-cpu",
+    "name": "CPU Intel Core i5 4ta Gen",
+    "category": "cpus",
+    "image": "img/productos/I5 4TA- CPU.jpg",
+    "specs": [
+      "Intel Core i5 (3.5 Ghz)",
+      "SSD 250GB",
+      "HDD 250GB",
+      "RAM 12GB",
+      "Incluye Teclado, Mouse, Parlantes"
+    ],
+    "description": "CPU i5 de cuarta generación con doble almacenamiento (SSD + HDD)."
+  },
+  {
+    "id": "i5-4ta-laptops",
+    "name": "Laptop Dell i5",
+    "category": "laptops",
+    "image": "img/productos/I5 4TA-LAPTOPS.jpg",
+    "specs": [
+      "Intel Core i5 (4500-GHZ)",
+      "SSD 1000GB",
+      "RAM 16GB",
+      "Pantalla 14\" - 15\"",
+      "+ Regalos (Mouse, Audífono, WiFi)"
+    ],
+    "description": "Laptop Dell con gran capacidad de almacenamiento y RAM, ideal para trabajo pesado."
+  },
+  {
+    "id": "i5-6ta-compu",
+    "name": "Computadora Dell i5 6ta Gen",
+    "category": "computadoras",
+    "image": "img/productos/I5 6TA- COMPU.jpg",
+    "specs": [
+      "Intel Core i5 (6ta Gen)",
+      "SSD 250GB",
+      "RAM 12GB",
+      "Monitor LCD 19\" WS",
+      "+ Regalos (WiFi, Webcam, Audífonos)"
+    ],
+    "description": "Dell OptiPlex de 6ta generación completa, lista para usar con todos sus accesorios."
+  },
+  {
+    "id": "i5-6ta-cpu",
+    "name": "CPU Intel Core i5 6ta Gen",
+    "category": "cpus",
+    "image": "img/productos/I5 6TA- CPU.jpg",
+    "specs": [
+      "Intel Core i5 (6ta Gen)",
+      "SSD 250GB",
+      "RAM 12GB",
+      "Incluye Teclado, Mouse, Parlantes"
+    ],
+    "description": "CPU eficiente de sexta generación para tareas de oficina."
+  },
+  {
+    "id": "i5-6ta-laptops",
+    "name": "Laptop Lenovo ThinkPad i5 6ta Gen",
+    "category": "laptops",
+    "image": "img/productos/I5 6TA-LAPTOPS.jpg",
+    "specs": [
+      "Intel Core i5 (6ta Gen)",
+      "SSD 250GB",
+      "RAM 8GB",
+      "Pantalla 14\"",
+      "+ Regalos (Mouse, Audífono, WiFi)"
+    ],
+    "description": "Laptop empresarial Lenovo ThinkPad resistente y confiable.",
+    "featured": true
+  },
+  {
+    "id": "i5-8ava-compu",
+    "name": "Computadora HP ProDesk i5 8va Gen",
+    "category": "computadoras",
+    "image": "img/productos/I5 8AVA- COMPU.jpg",
+    "specs": [
+      "Intel Core i5 (8va Gen)",
+      "SSD 250GB",
+      "RAM 8GB",
+      "Monitor LCD 19\" WS",
+      "+ Regalos (WiFi, Webcam, Audífonos)"
+    ],
+    "description": "Computadora moderna de octava generación con excelentes prestaciones."
+  },
+  {
+    "id": "i5-8ava-cpu",
+    "name": "CPU Intel Core i5 8va Gen",
+    "category": "cpus",
+    "image": "img/productos/I5 8AVA- CPU.jpg",
+    "specs": [
+      "Intel Core i5 (8va Gen)",
+      "SSD 500GB",
+      "RAM 16GB",
+      "Incluye Teclado, Mouse, Parlantes"
+    ],
+    "description": "CPU de alto rendimiento con 16GB de RAM y SSD amplio."
+  },
+  {
+    "id": "i5-8ava-laptops",
+    "name": "Laptop Dell i5 8va Gen",
+    "category": "laptops",
+    "image": "img/productos/I5 8AVA-LAPTOPS.jpg",
+    "specs": [
+      "Intel Core i5 (8va Gen)",
+      "SSD 250GB",
+      "RAM 8GB",
+      "Pantalla 14\"",
+      "+ Regalos (Mouse, Audífono, WiFi)"
+    ],
+    "description": "Laptop Dell ultradelgada y potente con procesador de octava generación."
+  },
+  {
+    "id": "i7-6ta-compu",
+    "name": "Computadora Dell i7 6ta Gen",
+    "category": "computadoras",
+    "image": "img/productos/I7 6TA- COMPU.jpg",
+    "specs": [
+      "Intel Core i7 (6ta Gen)",
+      "SSD 1000GB",
+      "RAM 16GB",
+      "Monitor LCD 19\" WS",
+      "+ Regalos (WiFi, Webcam, Audífonos)"
+    ],
+    "description": "Equipo de máximo rendimiento con procesador Core i7 y 1TB de almacenamiento."
+  },
+  {
+    "id": "i7-semigamers-laptops",
+    "name": "Laptop HP i7 Semigamer",
+    "category": "laptops",
+    "image": "img/productos/I7 SEMIGAMERS-LAPTOPS.jpg",
+    "specs": [
+      "Intel Core i7 (7ma Gen)",
+      "Gráficos ATI Radeon R7-M340 2GB",
+      "SSD 500GB",
+      "RAM 16GB",
+      "Pantalla 15.6\""
+    ],
+    "description": "Laptop Semigamer HP con tarjeta de video dedicada, ideal para juegos casuales y diseño."
+  },
+  {
+    "id": "l1250",
+    "name": "Impresora EPSON L1250",
+    "category": "impresoras",
+    "image": "img/productos/L1250.jpg",
+    "specs": [
+      "Conexión WiFi",
+      "Sistema Original Continuo",
+      "EcoTank"
+    ],
+    "description": "Impresora Epson EcoTank de inyección de tinta a color inalámbrica."
+  },
+  {
+    "id": "l3250",
+    "name": "Impresora Multifuncional EPSON L3250",
+    "category": "impresoras",
+    "image": "img/productos/L3250.jpg",
+    "specs": [
+      "Conexión WiFi",
+      "Sistema Continuo Original",
+      "Multifunción (Imprime, Copia, Escanea)"
+    ],
+    "description": "Impresora multifuncional Epson EcoTank, ultra bajo costo de impresión."
+  },
+  {
+    "id": "p-bank",
+    "name": "Power Bank LDNIO 20000mAh",
+    "category": "accesorios",
+    "image": "img/productos/P BANK.jpg",
+    "specs": [
+      "Capacidad: 20000 mAh",
+      "Salida: USB 5V",
+      "Puertos: Tipo C, Micro USB, Lightning",
+      "Uso continuo: 8 horas"
+    ],
+    "description": "Batería portátil de alta capacidad para cargar tus dispositivos en cualquier lugar."
+  },
+  {
+    "id": "punto-de-venta",
+    "name": "Kit Punto de Venta i5",
+    "category": "combos",
+    "image": "img/productos/PUNTO DE VENTA SEMIKITKIT.jpg",
+    "specs": [
+      "Intel Core i5",
+      "SSD 120GB",
+      "RAM 10GB",
+      "Pantalla 19\" WS",
+      "Ecuafact (1 Año Ilimitado)",
+      "Impresora de tickets y rollos"
+    ],
+    "description": "Kit completo para punto de venta que incluye computadora, monitor, impresora térmica y sistema de facturación electrónica."
+  },
+  {
+    "id": "router",
+    "name": "Router Wireless N300 D-Link",
+    "category": "accesorios",
+    "image": "img/productos/ROUTER.jpg",
+    "specs": [
+      "D-Link DIR-615",
+      "Wireless N300",
+      "2 Antenas High-Gain"
+    ],
+    "description": "Router inalámbrico para extender la señal y mejorar la conexión de tu hogar u oficina."
+  },
+  {
+    "id": "teatro-en-casa",
+    "name": "Teatro en Casa Kisonli",
+    "category": "accesorios",
+    "image": "img/productos/T EN CASA.jpg",
+    "specs": [
+      "Modelo: TM-6000U",
+      "Conexión USB / Bluetooth / AUX / FM",
+      "Soporta Tarjeta TF"
+    ],
+    "description": "Sistema de sonido envolvente para disfrutar de música, películas y juegos."
+  },
+  {
+    "id": "tapo-410",
+    "name": "Cámara Tapo TP-Link C410",
+    "category": "accesorios",
+    "image": "img/productos/TAPO 410.jpg",
+    "specs": [
+      "Resolución 2K a 3MP",
+      "Visión Nocturna a Color Starlight",
+      "Audio Bidireccional",
+      "Incluye Panel Solar",
+      "Exterior IP65"
+    ],
+    "description": "Cámara de seguridad inteligente Wi-Fi para exteriores con energía solar."
+  }
+]

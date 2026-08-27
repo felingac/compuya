@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nosotros — CompuYá Digital House Ecuador</title>
+  <meta name="description"
+    content="Más de 8 años de experiencia en tecnología y servicios digitales. CompuYá: computadores seminuevos, diseño web, redes sociales y branding en Ecuador.">
+  <link rel="canonical" href="https://compuya.com.ec/nosotros.html">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css?v=6">
+  <link rel="stylesheet" href="css/base.css?v=6">
+  <link rel="stylesheet" href="css/animations.css?v=6">
+  <link rel="stylesheet" href="css/components.css?v=6">
+  <link rel="stylesheet" href="css/layout.css?v=6">
+  <style>
+    .page-hero {
+      padding-top: calc(var(--header-height) + var(--space-16));
+      padding-bottom: var(--space-12);
+      background: var(--bg-surface);
+      text-align: center;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12);
+      align-items: center;
+    }
+
+    @media(max-width:768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .about-grid img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-card);
+    }
+
+    .value-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      transition: all var(--transition-base);
+    }
+
+    .value-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .value-card__title {
+      font-size: var(--fs-lg);
+      font-weight: var(--fw-bold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-3);
+    }
+
+    .value-card__desc {
+      font-size: var(--fs-sm);
+      color: var(--text-muted);
+      line-height: var(--lh-relaxed);
+    }
+  </style>
+</head>
+
+<body>
+    <header class="header" id="header" role="banner">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo" aria-label="CompuYá - Inicio">
+        <img src="img/logo.png" alt="CompuYá Logo">
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html" class="nav__link">Inicio</a>
+        <a href="index.html#destacados" class="nav__link">Destacados</a>
+        <a href="index.html#computadores" class="nav__link">Computadores</a>
+        <div class="nav__dropdown">
+          <a href="index.html#servicios" class="nav__link">Servicios <svg width="12" height="12" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" style="margin-top: 2px;">
+              <path d="M6 9l6 6 6-6" />
+            </svg></a>
+          <div class="nav__dropdown-content">
+            <a href="diseno-web.html">Diseño Web</a>
+            <a href="redes-sociales.html">Redes Sociales</a>
+            <a href="creamos-tu-marca.html">Creación de Marca</a>
+            <a href="avilchat.html">Avilchat (Bot IA)</a>
+          </div>
+        </div>
+        <a href="index.html#marcas" class="nav__link">Marcas</a>
+        <a href="contacto.html" class="nav__link">Contacto</a>
+      </nav>
+
+      <div class="header__cta">
+        <a href="contacto.html" class="btn btn-primary btn-sm">Cotizar ahora</a>
+        <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Menú móvil">
+    <a href="index.html" class="mobile-nav__link">Inicio</a>
+    <a href="index.html#destacados" class="mobile-nav__link">Destacados</a>
+    <a href="index.html#computadores" class="mobile-nav__link">Computadores</a>
+    <a href="index.html#servicios" class="mobile-nav__link">Servicios</a>
+    <a href="diseno-web.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Diseño Web</a>
+    <a href="redes-sociales.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Redes Sociales</a>
+    <a href="creamos-tu-marca.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Creación de Marca</a>
+    <a href="avilchat.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Avilchat (Bot IA)</a>
+    <a href="index.html#marcas" class="mobile-nav__link">Marcas</a>
+    <a href="contacto.html" class="mobile-nav__link">Contacto</a>
+    <a href="contacto.html" class="btn btn-primary btn-lg" style="margin-top: var(--space-4);">Cotizar ahora</a>
+  </div>
+  
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="overline" style="display:block;margin-bottom:var(--space-3);">SOBRE NOSOTROS</span>
+        <h1 style="max-width:800px;margin:0 auto var(--space-6);">CompuYá — Digital House Ecuador</h1>
+        <p class="lead" style="max-width:700px;margin:0 auto;">Cultivamos, construimos y potenciamos tu presencia
+          digital con tecnología y servicios profesionales.</p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section">
+      <div class="container">
+        <div class="about-grid reveal">
+          <div>
+            <h2 style="margin-bottom:var(--space-6);">Somos CompuYá</h2>
+            <p style="color:var(--text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--space-4);">Llevamos más
+              de 8 años ayudando a negocios y emprendedores a crecer con soluciones tecnológicas y digitales efectivas y
+              accesibles. Diseñamos experiencias atractivas (UI/UX), construimos marcas sólidas y desarrollamos campañas
+              de marketing digital que conectan, generan confianza y resultados reales.</p>
+            <p style="color:var(--text-muted);line-height:var(--lh-relaxed);margin-bottom:var(--space-4);">Somos
+              expertos en computadores seminuevos, diseño de páginas web, posicionamiento SEO, redes sociales y
+              publicidad digital.</p>
+            <p style="color:var(--text-muted);line-height:var(--lh-relaxed);">Trabajamos con una metodología clara que
+              nos permite entender tu negocio, definir objetivos medibles y ejecutar campañas efectivas que generen
+              resultados.</p>
+          </div>
+          <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80"
+            alt="Equipo CompuYá trabajando" loading="lazy">
+        </div>
+        <!-- Stats -->
+        <div class="grid grid-3 gap-6" style="margin-top:var(--space-12);">
+          <div class="stat-card reveal">
+            <div class="stat-card__number">1.940+</div>
+            <div class="stat-card__label">Proyectos Finalizados</div>
+          </div>
+          <div class="stat-card reveal">
+            <div class="stat-card__number">8+</div>
+            <div class="stat-card__label">Años de Experiencia</div>
+          </div>
+          <div class="stat-card reveal">
+            <div class="stat-card__number">344+</div>
+            <div class="stat-card__label">Clientes Satisfechos</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUÉ HACEMOS -->
+    <section class="section section-surface">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-header__title">Lo que hacemos en CompuYá</h2>
+          <p class="section-header__desc">No solo ejecutamos proyectos digitales: pensamos estratégicamente, diseñamos
+            con intención y optimizamos cada paso.</p>
+        </div>
+        <div class="grid grid-2 gap-6 stagger" style="max-width:800px;margin:0 auto;">
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">📱</div>
+            <h4 class="reason-card__title">Administración de redes sociales</h4>
+            <p class="reason-card__desc">Gestión estratégica de contenido gráfico y audiovisual.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">🎯</div>
+            <h4 class="reason-card__title">Embudos de venta</h4>
+            <p class="reason-card__desc">Inbound Marketing y estrategias de conversión.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">🔍</div>
+            <h4 class="reason-card__title">Diagnóstico digital</h4>
+            <p class="reason-card__desc">Auditorías de marca y análisis de presencia online.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">📈</div>
+            <h4 class="reason-card__title">Estrategias personalizadas</h4>
+            <p class="reason-card__desc">Soluciones digitales escalables y acompañamiento continuo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VALORES -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-header__overline">Nuestros Valores</span>
+          <h2 class="section-header__title">Lo que nos impulsa</h2>
+        </div>
+        <div class="grid grid-2 gap-6 stagger" style="max-width:900px;margin:0 auto;">
+          <div class="value-card reveal">
+            <h4 class="value-card__title">🤝 Trabajo en equipo</h4>
+            <p class="value-card__desc">Valoramos a cada integrante, reconociendo su papel esencial en el éxito de cada
+              proyecto. La colaboración es la base para lograr resultados excepcionales.</p>
+          </div>
+          <div class="value-card reveal">
+            <h4 class="value-card__title">💡 Innovación y aprendizaje</h4>
+            <p class="value-card__desc">Nos impulsa la curiosidad, el aprendizaje continuo y la evolución constante.
+              Estar al día nos permite ofrecer soluciones efectivas y con visión de futuro.</p>
+          </div>
+          <div class="value-card reveal">
+            <h4 class="value-card__title">❤️ Talento humano</h4>
+            <p class="value-card__desc">Cuidamos a quienes hacen posible cada proyecto. Promovemos un entorno donde la
+              motivación, la creatividad y el compromiso se reflejan en cada entrega.</p>
+          </div>
+          <div class="value-card reveal">
+            <h4 class="value-card__title">🔥 Profesionalismo y pasión</h4>
+            <p class="value-card__desc">Creemos en el equilibrio entre la excelencia profesional y la pasión por lo que
+              hacemos. Desafiamos lo convencional y creamos soluciones con propósito.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark text-center">
+      <div class="container">
+        <h2 style="color:#fff;margin-bottom:var(--space-4);">Asesoría personalizada para tu marca</h2>
+        <p style="color:var(--text-on-dark);margin-bottom:var(--space-8);">Escríbenos y descubre cómo podemos impulsar
+          tu negocio.</p>
+        <a href="contacto.html" class="btn btn-primary btn-lg">Contactar ahora</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><img src="img/logo.png" alt="CompuYá">
+          <p>Computadores seminuevos y servicios digitales en Ecuador.</p>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Productos</h4>
+          <div class="footer__links"><a href="index.html#ofertas" class="footer__link">Ofertas</a><a
+              href="index.html#computadores" class="footer__link">Computadores</a></div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Servicios</h4>
+          <div class="footer__links"><a href="diseno-web.html" class="footer__link">Diseño Web</a><a
+              href="redes-sociales.html" class="footer__link">Redes Sociales</a><a href="creamos-tu-marca.html"
+              class="footer__link">Branding</a></div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Empresa</h4>
+          <div class="footer__links"><a href="nosotros.html" class="footer__link">Nosotros</a><a href="contacto.html"
+              class="footer__link">Contacto</a></div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© <span id="current-year">2024</span> CompuYá — Ecuador.</p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/593992292199" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg
+      width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+      <path
+        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+    </svg></a>
+  <button class="scroll-top" aria-label="Subir"><svg width="20" height="20" fill="none" stroke="currentColor"
+      viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg></button>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

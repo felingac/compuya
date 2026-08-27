@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manejo de Redes Sociales Estratégicas — CompuYá</title>
+  <meta name="description"
+    content="Manejo de redes sociales para emprendedores. Contenido profesional creado con IA y revisado por expertos. Desde $149/mes. CompuYá Digital.">
+  <link rel="canonical" href="https://compuya.com.ec/redes-sociales.html">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css?v=6">
+  <link rel="stylesheet" href="css/base.css?v=6">
+  <link rel="stylesheet" href="css/animations.css?v=6">
+  <link rel="stylesheet" href="css/components.css?v=6">
+  <link rel="stylesheet" href="css/layout.css?v=6">
+  <style>
+    .pricing-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-2xl);
+      border: 1px solid var(--border-light);
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-base);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .pricing-card--popular {
+      border: 2px solid var(--primary);
+      position: relative;
+      transform: scale(1.03);
+    }
+
+    .pricing-card--popular:hover {
+      transform: scale(1.03) translateY(-6px);
+    }
+
+    .pricing-card__badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: #fff;
+      padding: var(--space-1) var(--space-5);
+      border-radius: var(--radius-full);
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--ls-wider);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .pricing-card__tag {
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--ls-widest);
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: var(--space-3);
+    }
+
+    .pricing-card__title {
+      font-size: var(--fs-xl);
+      font-weight: var(--fw-extrabold);
+      color: var(--primary);
+      margin-bottom: var(--space-3);
+    }
+
+    .pricing-card__desc {
+      color: var(--text-muted);
+      font-size: var(--fs-sm);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--space-6);
+    }
+
+    .pricing-card__price {
+      font-family: var(--font-mono);
+      font-size: var(--fs-3xl);
+      font-weight: var(--fw-extrabold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-1);
+    }
+
+    .pricing-card__payment {
+      font-size: var(--fs-sm);
+      color: var(--text-muted);
+      margin-bottom: var(--space-6);
+      padding-bottom: var(--space-6);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .pricing-card__features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--space-6);
+      flex: 1;
+    }
+
+    .pricing-card__features li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      margin-bottom: var(--space-3);
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-medium);
+      color: var(--text-secondary);
+    }
+
+    .pricing-card__features li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: var(--fw-bold);
+      flex-shrink: 0;
+    }
+
+    .pricing-card__note {
+      padding: var(--space-3) var(--space-4);
+      background: var(--bg-surface);
+      border-left: 3px solid var(--primary);
+      border-radius: var(--radius-sm);
+      font-size: var(--fs-xs);
+      color: var(--text-muted);
+      margin-bottom: var(--space-6);
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      margin-bottom: var(--space-3);
+      overflow: hidden;
+    }
+
+    .faq-item__q {
+      width: 100%;
+      text-align: left;
+      padding: var(--space-5) var(--space-6);
+      font-size: var(--fs-base);
+      font-weight: var(--fw-semibold);
+      color: var(--text-primary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    .faq-item__q:hover {
+      color: var(--primary);
+    }
+
+    .faq-item__q span {
+      transition: transform var(--transition-base);
+      font-size: var(--fs-lg);
+    }
+
+    .faq-item.open .faq-item__q span {
+      transform: rotate(45deg);
+    }
+
+    .faq-item__a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 var(--space-6);
+    }
+
+    .faq-item.open .faq-item__a {
+      max-height: 500px;
+      padding: 0 var(--space-6) var(--space-5);
+    }
+
+    .faq-item__a p {
+      color: var(--text-muted);
+      font-size: var(--fs-sm);
+      line-height: var(--lh-relaxed);
+    }
+
+    .page-hero {
+      padding-top: calc(var(--header-height) + var(--space-16));
+      padding-bottom: var(--space-12);
+      background: var(--bg-surface);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+    <header class="header" id="header" role="banner">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo" aria-label="CompuYá - Inicio">
+        <img src="img/logo.png" alt="CompuYá Logo">
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html" class="nav__link">Inicio</a>
+        <a href="index.html#destacados" class="nav__link">Destacados</a>
+        <a href="index.html#computadores" class="nav__link">Computadores</a>
+        <div class="nav__dropdown">
+          <a href="index.html#servicios" class="nav__link">Servicios <svg width="12" height="12" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" style="margin-top: 2px;">
+              <path d="M6 9l6 6 6-6" />
+            </svg></a>
+          <div class="nav__dropdown-content">
+            <a href="diseno-web.html">Diseño Web</a>
+            <a href="redes-sociales.html">Redes Sociales</a>
+            <a href="creamos-tu-marca.html">Creación de Marca</a>
+            <a href="avilchat.html">Avilchat (Bot IA)</a>
+          </div>
+        </div>
+        <a href="index.html#marcas" class="nav__link">Marcas</a>
+        <a href="contacto.html" class="nav__link">Contacto</a>
+      </nav>
+
+      <div class="header__cta">
+        <a href="contacto.html" class="btn btn-primary btn-sm">Cotizar ahora</a>
+        <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Menú móvil">
+    <a href="index.html" class="mobile-nav__link">Inicio</a>
+    <a href="index.html#destacados" class="mobile-nav__link">Destacados</a>
+    <a href="index.html#computadores" class="mobile-nav__link">Computadores</a>
+    <a href="index.html#servicios" class="mobile-nav__link">Servicios</a>
+    <a href="diseno-web.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Diseño Web</a>
+    <a href="redes-sociales.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Redes Sociales</a>
+    <a href="creamos-tu-marca.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Creación de Marca</a>
+    <a href="avilchat.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Avilchat (Bot IA)</a>
+    <a href="index.html#marcas" class="mobile-nav__link">Marcas</a>
+    <a href="contacto.html" class="mobile-nav__link">Contacto</a>
+    <a href="contacto.html" class="btn btn-primary btn-lg" style="margin-top: var(--space-4);">Cotizar ahora</a>
+  </div>
+  
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="overline" style="display:block;margin-bottom:var(--space-3);">REDES SOCIALES PARA
+          EMPRENDEDORES</span>
+        <h1 style="max-width:800px;margin:0 auto var(--space-6);">Manejo de redes sociales estratégicas</h1>
+        <p class="lead" style="max-width:700px;margin:0 auto var(--space-8);">Contenido estratégico para redes, creado
+          con IA y revisado por profesionales. Paga, recibe tu contenido mensual listo para publicar y crece en
+          Instagram, TikTok y Facebook.</p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="#planes" class="btn btn-primary btn-lg">Ver planes desde $149</a>
+          <a href="https://wa.me/593992292199?text=Hola,%20quiero%20información%20sobre%20Redes%20Sociales"
+            target="_blank" rel="noopener" class="btn btn-outline btn-lg">Asesoría gratis</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EL PROBLEMA -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge badge--danger" style="margin-bottom:var(--space-3);">El problema real</span>
+          <h2 class="section-header__title">Publicar sin estrategia es tiempo y dinero perdido</h2>
+          <p class="section-header__desc">El 80% de los emprendedores publica sin plan, sin consistencia y sin medir
+            resultados.</p>
+        </div>
+        <div class="grid grid-3 gap-6 stagger">
+          <div class="reason-card reveal">
+            <div class="reason-card__icon" style="background:rgba(239,68,68,0.08);color:var(--danger);">❌</div>
+            <h4 class="reason-card__title">Publican sin estrategia</h4>
+            <p class="reason-card__desc">Suben contenido cuando pueden, sin calendario ni objetivo. El algoritmo los
+              ignora y el engagement cae.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon" style="background:rgba(239,68,68,0.08);color:var(--danger);">💸</div>
+            <h4 class="reason-card__title">Las agencias cobran demasiado</h4>
+            <p class="reason-card__desc">Un community manager o agencia tradicional cobra fortunas — presupuesto que la
+              mayoría no tiene.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon" style="background:rgba(239,68,68,0.08);color:var(--danger);">⏰</div>
+            <h4 class="reason-card__title">No tienen tiempo para producir</h4>
+            <p class="reason-card__desc">El emprendedor tiene que atender su negocio. Crear diseños, copys y videos cada
+              semana es tiempo que no tiene.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANES -->
+    <section class="section section-surface" id="planes">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-header__overline">Planes mensuales</span>
+          <h2 class="section-header__title">Sin contratos. Sin sorpresas.</h2>
+          <p class="section-header__desc">Dos packs diseñados para emprendedores que quieren presencia profesional en
+            redes. Pagas y recibes tu contenido en 4 días hábiles.</p>
+        </div>
+        <div class="grid grid-2 gap-8 stagger" style="max-width:900px;margin:0 auto;align-items:start;">
+          <div class="pricing-card reveal">
+            <div class="pricing-card__tag">Pack Contenido IA — Más rentable</div>
+            <h3 class="pricing-card__title">Tú publicas, nosotros producimos</h3>
+            <p class="pricing-card__desc">El pack ideal para emprendedores que quieren contenido profesional pero
+              prefieren publicar ellos mismos.</p>
+            <div class="pricing-card__price">$149 <span
+                style="font-size:var(--fs-sm);color:var(--text-muted);font-weight:400;">USD/mes</span></div>
+            <div class="pricing-card__payment">Sin contrato · Entrega en 4 días hábiles</div>
+            <ul class="pricing-card__features">
+              <li>12 piezas gráficas optimizadas para feed e historias</li>
+              <li>Copy estratégico para cada publicación</li>
+              <li>Calendario editorial mensual</li>
+              <li>Hashtags investigados y segmentados</li>
+              <li>Guía de publicación paso a paso</li>
+              <li>IA genera el diseño + profesional revisa</li>
+              <li>Adaptado a Instagram, Facebook y TikTok</li>
+            </ul>
+            <div class="pricing-card__note">📌 No incluye publicación ni respuesta a comentarios. Tú administras tus
+              redes con el contenido que te entregamos.</div>
+            <a href="https://wa.me/593992292199?text=Hola,%20me%20interesa%20el%20Pack%20Contenido%20IA" target="_blank"
+              rel="noopener" class="btn btn-outline" style="width:100%;">Comprar Pack Contenido IA</a>
+          </div>
+          <div class="pricing-card pricing-card--popular reveal">
+            <span class="pricing-card__badge">🔥 Más completo</span>
+            <div class="pricing-card__tag">Pack Gestión Express</div>
+            <h3 class="pricing-card__title">Nosotros producimos y publicamos por ti</h3>
+            <p class="pricing-card__desc">Para emprendedores que quieren presencia activa en redes sin mover un dedo.
+            </p>
+            <div class="pricing-card__price">$249 <span
+                style="font-size:var(--fs-sm);color:var(--text-muted);font-weight:400;">USD/mes</span></div>
+            <div class="pricing-card__payment">Sin contrato · Publicación incluida</div>
+            <ul class="pricing-card__features">
+              <li>Todo lo del Pack Contenido IA</li>
+              <li>Publicación en 1 red social (Instagram o Facebook)</li>
+              <li>Programación en mejores horarios de tu audiencia</li>
+              <li>Optimización de perfil (bio, foto, destacados)</li>
+              <li>2 Reels adicionales guionados para que grabes tú</li>
+              <li>Reporte mensual básico de alcance y engagement</li>
+              <li>Atención de consultas por WhatsApp</li>
+            </ul>
+            <div class="pricing-card__note">📌 No incluye respuesta a DMs en tiempo real, ni pauta publicitaria.</div>
+            <a href="https://wa.me/593992292199?text=Hola,%20me%20interesa%20el%20Pack%20Gestión%20Express"
+              target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;">Contratar por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-header__title">De tu pago a tu contenido en 4 días hábiles</h2>
+        </div>
+        <div class="grid grid-4 gap-6 stagger">
+          <div class="step-card reveal">
+            <div class="step-card__number">01</div>
+            <h4 class="step-card__title">Eliges y pagas tu pack</h4>
+            <p class="step-card__desc">Seleccionas el pack. Pagas de forma segura. Confirmación inmediata.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-card__number">02</div>
+            <h4 class="step-card__title">Nos envías el onboarding</h4>
+            <p class="step-card__desc">Recibes un formulario simple: colores, tono, productos y referencias.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-card__number">03</div>
+            <h4 class="step-card__title">La IA produce, expertos revisan</h4>
+            <p class="step-card__desc">Nuestro equipo dirige la IA para crear tus diseños y copys. Cada pieza pasa por
+              revisión.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-card__number">04</div>
+            <h4 class="step-card__title">Recibes tu contenido listo</h4>
+            <p class="step-card__desc">Todo en Google Drive: piezas editables, copys, calendario y guía.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section section-surface">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-header__overline">Lo que incluye tu servicio</span>
+          <h2 class="section-header__title">Gestión de redes sociales estratégicas</h2>
+        </div>
+        <div class="grid grid-3 gap-6 stagger">
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">🎯</div>
+            <h4 class="reason-card__title">Estrategia personalizada</h4>
+            <p class="reason-card__desc">Basada en tu audiencia, tus objetivos y los mejores horarios para maximizar
+              alcance.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">🎨</div>
+            <h4 class="reason-card__title">Diseño profesional</h4>
+            <p class="reason-card__desc">Piezas gráficas para feed e historias adaptadas a las últimas tendencias.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">✍️</div>
+            <h4 class="reason-card__title">Copywriting estratégico</h4>
+            <p class="reason-card__desc">Textos persuasivos y llamadas a la acción adaptados al tono de tu marca.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">📅</div>
+            <h4 class="reason-card__title">Calendario editorial</h4>
+            <p class="reason-card__desc">Parrilla de contenidos organizada para publicar sin improvisar.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">🤖</div>
+            <h4 class="reason-card__title">IA aplicada al diseño</h4>
+            <p class="reason-card__desc">Usamos IA para acelerar la producción. Nuestro equipo la dirige y supervisa.
+            </p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">📈</div>
+            <h4 class="reason-card__title">Optimizado para el algoritmo</h4>
+            <p class="reason-card__desc">Hashtags estratégicos que generan visibilidad orgánica real.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container container-narrow">
+        <div class="section-header reveal">
+          <h2 class="section-header__title">Preguntas frecuentes</h2>
+        </div>
+        <div class="reveal">
+          <div class="faq-item open"><button class="faq-item__q"
+              onclick="this.parentElement.classList.toggle('open')">¿Cuánto cuesta el manejo de redes sociales?
+              <span>+</span></button>
+            <div class="faq-item__a">
+              <p>El Pack Contenido IA cuesta $149 USD/mes y el Pack Gestión Express $249 USD/mes. Sin contrato, sin
+                sorpresas.</p>
+            </div>
+          </div>
+          <div class="faq-item"><button class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">¿Cuál
+              es el mejor plan para un emprendimiento? <span>+</span></button>
+            <div class="faq-item__a">
+              <p>Si tienes tiempo para publicar, el Pack Contenido IA es ideal. Si quieres que publiquemos por ti, el
+                Pack Gestión Express es la mejor opción.</p>
+            </div>
+          </div>
+          <div class="faq-item"><button class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">¿Cómo
+              administrar redes sociales si soy emprendedor? <span>+</span></button>
+            <div class="faq-item__a">
+              <p>Contrata un pack mensual. Nosotros producimos tus diseños, copys y calendario con IA supervisada. Tú
+                solo publicas — o nosotros lo hacemos con el Pack Gestión Express.</p>
+            </div>
+          </div>
+          <div class="faq-item"><button class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">¿Qué
+              incluye el contenido estratégico? <span>+</span></button>
+            <div class="faq-item__a">
+              <p>Piezas gráficas alineadas con tu identidad visual, copywriting persuasivo, hashtags segmentados,
+                formatos adaptados a cada plataforma y calendario editorial.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark text-center">
+      <div class="container">
+        <h2 style="color:#fff;margin-bottom:var(--space-4);">¿Listo para dominar tus redes sociales?</h2>
+        <p style="color:var(--text-on-dark);margin-bottom:var(--space-8);">Escríbenos y comenzamos hoy.</p>
+        <a href="https://wa.me/593992292199?text=Hola,%20quiero%20información%20sobre%20Redes%20Sociales"
+          target="_blank" rel="noopener" class="btn btn-primary btn-lg">Hablar con un asesor</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><img src="img/logo.png" alt="CompuYá">
+          <p>Computadores seminuevos y servicios digitales en Ecuador.</p>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Productos</h4>
+          <div class="footer__links"><a href="index.html#ofertas" class="footer__link">Ofertas</a><a
+              href="index.html#computadores" class="footer__link">Computadores</a></div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Servicios</h4>
+          <div class="footer__links"><a href="diseno-web.html" class="footer__link">Diseño Web</a><a
+              href="redes-sociales.html" class="footer__link">Redes Sociales</a><a href="creamos-tu-marca.html"
+              class="footer__link">Branding</a></div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Empresa</h4>
+          <div class="footer__links"><a href="nosotros.html" class="footer__link">Nosotros</a><a href="contacto.html"
+              class="footer__link">Contacto</a></div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© <span id="current-year">2024</span> CompuYá — Ecuador.</p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/593992292199" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg
+      width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+      <path
+        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+    </svg></a>
+  <button class="scroll-top" aria-label="Subir"><svg width="20" height="20" fill="none" stroke="currentColor"
+      viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg></button>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

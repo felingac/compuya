@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño de Páginas Web Profesionales — CompuYá</title>
+  <meta name="description"
+    content="Diseño de páginas web profesionales para emprendedores. Landing Pages, sitios web completos y tiendas virtuales en WordPress. Entrega desde 4 días hábiles. CompuYá Digital.">
+  <link rel="canonical" href="https://compuya.com.ec/diseno-web.html">
+  <meta property="og:title" content="Diseño Web Profesional — CompuYá">
+  <meta property="og:description"
+    content="Páginas web profesionales desde $179 USD. WordPress administrable, SEO incluido, entrega en 4 días hábiles.">
+  <meta property="og:url" content="https://compuya.com.ec/diseno-web.html">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css?v=6">
+  <link rel="stylesheet" href="css/base.css?v=6">
+  <link rel="stylesheet" href="css/animations.css?v=6">
+  <link rel="stylesheet" href="css/components.css?v=6">
+  <link rel="stylesheet" href="css/layout.css?v=6">
+  <style>
+    .pricing-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-2xl);
+      border: 1px solid var(--border-light);
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-base);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .pricing-card--popular {
+      border: 2px solid var(--primary);
+      position: relative;
+      transform: scale(1.03);
+    }
+
+    .pricing-card--popular:hover {
+      transform: scale(1.03) translateY(-6px);
+    }
+
+    .pricing-card__badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: #fff;
+      padding: var(--space-1) var(--space-5);
+      border-radius: var(--radius-full);
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--ls-wider);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .pricing-card__tag {
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--ls-widest);
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: var(--space-3);
+    }
+
+    .pricing-card__title {
+      font-size: var(--fs-2xl);
+      font-weight: var(--fw-extrabold);
+      color: var(--primary);
+      margin-bottom: var(--space-3);
+    }
+
+    .pricing-card__desc {
+      color: var(--text-muted);
+      font-size: var(--fs-sm);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--space-6);
+    }
+
+    .pricing-card__price {
+      font-family: var(--font-mono);
+      font-size: var(--fs-3xl);
+      font-weight: var(--fw-extrabold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-1);
+    }
+
+    .pricing-card__payment {
+      font-size: var(--fs-sm);
+      color: var(--text-muted);
+      margin-bottom: var(--space-6);
+      padding-bottom: var(--space-6);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .pricing-card__features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--space-6);
+      flex: 1;
+    }
+
+    .pricing-card__features li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      margin-bottom: var(--space-3);
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-medium);
+      color: var(--text-secondary);
+    }
+
+    .pricing-card__features li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: var(--fw-bold);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      margin-bottom: var(--space-3);
+      overflow: hidden;
+    }
+
+    .faq-item__q {
+      width: 100%;
+      text-align: left;
+      padding: var(--space-5) var(--space-6);
+      font-size: var(--fs-base);
+      font-weight: var(--fw-semibold);
+      color: var(--text-primary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    .faq-item__q:hover {
+      color: var(--primary);
+    }
+
+    .faq-item__q span {
+      transition: transform var(--transition-base);
+      font-size: var(--fs-lg);
+    }
+
+    .faq-item.open .faq-item__q span {
+      transform: rotate(45deg);
+    }
+
+    .faq-item__a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 var(--space-6);
+    }
+
+    .faq-item.open .faq-item__a {
+      max-height: 500px;
+      padding: 0 var(--space-6) var(--space-5);
+    }
+
+    .faq-item__a p {
+      color: var(--text-muted);
+      font-size: var(--fs-sm);
+      line-height: var(--lh-relaxed);
+    }
+
+    .page-hero {
+      padding-top: calc(var(--header-height) + var(--space-16));
+      padding-bottom: var(--space-12);
+      background: var(--bg-surface);
+      text-align: center;
+    }
+
+    .page-hero__overline {
+      display: block;
+      margin-bottom: var(--space-3);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+    <header class="header" id="header" role="banner">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo" aria-label="CompuYá - Inicio">
+        <img src="img/logo.png" alt="CompuYá Logo">
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html" class="nav__link">Inicio</a>
+        <a href="index.html#destacados" class="nav__link">Destacados</a>
+        <a href="index.html#computadores" class="nav__link">Computadores</a>
+        <div class="nav__dropdown">
+          <a href="index.html#servicios" class="nav__link">Servicios <svg width="12" height="12" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" style="margin-top: 2px;">
+              <path d="M6 9l6 6 6-6" />
+            </svg></a>
+          <div class="nav__dropdown-content">
+            <a href="diseno-web.html">Diseño Web</a>
+            <a href="redes-sociales.html">Redes Sociales</a>
+            <a href="creamos-tu-marca.html">Creación de Marca</a>
+            <a href="avilchat.html">Avilchat (Bot IA)</a>
+          </div>
+        </div>
+        <a href="index.html#marcas" class="nav__link">Marcas</a>
+        <a href="contacto.html" class="nav__link">Contacto</a>
+      </nav>
+
+      <div class="header__cta">
+        <a href="contacto.html" class="btn btn-primary btn-sm">Cotizar ahora</a>
+        <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Menú móvil">
+    <a href="index.html" class="mobile-nav__link">Inicio</a>
+    <a href="index.html#destacados" class="mobile-nav__link">Destacados</a>
+    <a href="index.html#computadores" class="mobile-nav__link">Computadores</a>
+    <a href="index.html#servicios" class="mobile-nav__link">Servicios</a>
+    <a href="diseno-web.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Diseño Web</a>
+    <a href="redes-sociales.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Redes Sociales</a>
+    <a href="creamos-tu-marca.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Creación de Marca</a>
+    <a href="avilchat.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Avilchat (Bot IA)</a>
+    <a href="index.html#marcas" class="mobile-nav__link">Marcas</a>
+    <a href="contacto.html" class="mobile-nav__link">Contacto</a>
+    <a href="contacto.html" class="btn btn-primary btn-lg" style="margin-top: var(--space-4);">Cotizar ahora</a>
+  </div>
+  
+
+  <main>
+    <!-- HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="overline page-hero__overline">DISEÑO DE PÁGINAS WEB</span>
+        <h1 style="max-width:800px;margin:0 auto var(--space-6);">Tu negocio merece una web que trabaje por ti</h1>
+        <p class="lead" style="max-width:700px;margin:0 auto var(--space-8);">Diseñamos páginas web profesionales para
+          emprendedores. WordPress administrable, entrega rápida y posicionada en Google. Más de 8 años de experiencia y
+          344+ páginas entregadas.</p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="https://wa.me/593992292199?text=Hola,%20quiero%20información%20sobre%20Diseño%20Web" target="_blank"
+            rel="noopener" class="btn btn-primary btn-lg">Pagar y comenzar</a>
+          <a href="#planes" class="btn btn-outline btn-lg">Ver planes</a>
+        </div>
+        <div class="grid grid-4 gap-6" style="margin-top:var(--space-12);max-width:800px;margin-inline:auto;">
+          <div class="stat-card">
+            <div class="stat-card__number">8+</div>
+            <div class="stat-card__label">Años en el mercado</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number">344+</div>
+            <div class="stat-card__label">Webs entregadas</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number">4</div>
+            <div class="stat-card__label">Días entrega Express</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number">100%</div>
+            <div class="stat-card__label">WordPress administrable</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ¿POR QUÉ? -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-header__title">¿Por qué elegir CompuYá para tu página web?</h2>
+          <p class="section-header__desc">Más que diseño web, somos tu aliado digital. Con más de 344 páginas entregadas
+            a nivel internacional.</p>
+        </div>
+        <div class="grid grid-3 gap-6 stagger">
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">💡</div>
+            <h4 class="reason-card__title">Pensamos como emprendedores</h4>
+            <p class="reason-card__desc">Una web profesional, rápida y clara que te ayude a vender más sin gastar de
+              más.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">🎨</div>
+            <h4 class="reason-card__title">Diseño web con propósito</h4>
+            <p class="reason-card__desc">Diseño funcional, atractivo y 100% adaptado a celular y computador.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">📦</div>
+            <h4 class="reason-card__title">Todo en un solo lugar</h4>
+            <p class="reason-card__desc">Diseño, desarrollo, dominio, hosting, SEO y redes. Todo integrado.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">🤖</div>
+            <h4 class="reason-card__title">IA + profesionales expertos</h4>
+            <p class="reason-card__desc">Inteligencia artificial que acelera. Expertos que supervisan. Calidad
+              garantizada.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">🤝</div>
+            <h4 class="reason-card__title">Acompañamiento humano</h4>
+            <p class="reason-card__desc">Asesoría personalizada y atención cercana para emprendedores.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">📊</div>
+            <h4 class="reason-card__title">Resultados reales</h4>
+            <p class="reason-card__desc">Más de 344 páginas web entregadas a nivel global nos respaldan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANES -->
+    <section class="section section-surface" id="planes">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-header__overline">Planes</span>
+          <h2 class="section-header__title">Diseño web para todo tipo de emprendimiento</h2>
+          <p class="section-header__desc">Elige el plan que mejor se adapte a tu negocio. Todos incluyen dominio,
+            hosting y SSL el primer año.</p>
+        </div>
+        <div class="grid grid-3 gap-6 stagger" style="align-items:start;">
+          <!-- Landing Page -->
+          <div class="pricing-card reveal">
+            <div class="pricing-card__tag">Plan IA WordPress</div>
+            <h3 class="pricing-card__title">Landing Page</h3>
+            <p class="pricing-card__desc">Para emprendedores que quieren presencia web profesional rápida y rentable.
+            </p>
+            <div class="pricing-card__price">$179 <span
+                style="font-size:var(--fs-sm);color:var(--text-muted);font-weight:400;">USD</span></div>
+            <div class="pricing-card__payment">Pago único · Entrega en 4 días hábiles</div>
+            <ul class="pricing-card__features">
+              <li>1 Landing Page tipo One Page</li>
+              <li>Hasta 5 secciones personalizadas</li>
+              <li>Dominio .com gratis por 1 año</li>
+              <li>Hosting profesional por 1 año</li>
+              <li>Certificado SSL de seguridad</li>
+              <li>1 correo corporativo</li>
+              <li>WordPress administrable</li>
+              <li>Diseño con IA + revisión profesional</li>
+              <li>Botón WhatsApp + formulario</li>
+              <li>SEO básico desde el día 1</li>
+              <li>Manual PDF de administración</li>
+            </ul>
+            <a href="https://wa.me/593992292199?text=Hola,%20me%20interesa%20el%20plan%20Landing%20Page" target="_blank"
+              rel="noopener" class="btn btn-outline" style="width:100%;">Solicitar por WhatsApp</a>
+          </div>
+          <!-- Web Completa -->
+          <div class="pricing-card pricing-card--popular reveal">
+            <span class="pricing-card__badge">🔥 Más elegido</span>
+            <div class="pricing-card__tag">Plan Emprendedores</div>
+            <h3 class="pricing-card__title">Web Completa</h3>
+            <p class="pricing-card__desc">Diseño con catálogo de servicios o productos y páginas internas para
+              posicionarte mejor.</p>
+            <div class="pricing-card__price">$289 <span
+                style="font-size:var(--fs-sm);color:var(--text-muted);font-weight:400;">USD</span></div>
+            <div class="pricing-card__payment">Pago único · Entrega en 12 días hábiles</div>
+            <ul class="pricing-card__features">
+              <li>Hasta 5 páginas o secciones</li>
+              <li>Catálogo de hasta 5 servicios/productos</li>
+              <li>Dominio .com + Hosting + SSL 1 año</li>
+              <li>3 correos corporativos</li>
+              <li>Diseño IA + revisión profesional</li>
+              <li>SEO básico + Google Search Console</li>
+              <li>Tutorial en video de autogestión</li>
+            </ul>
+            <a href="https://wa.me/593992292199?text=Hola,%20me%20interesa%20el%20plan%20Web%20Completa" target="_blank"
+              rel="noopener" class="btn btn-primary" style="width:100%;">Solicitar por WhatsApp</a>
+          </div>
+          <!-- E-commerce -->
+          <div class="pricing-card reveal">
+            <div class="pricing-card__tag">Plan Tienda Virtual</div>
+            <h3 class="pricing-card__title">E-commerce</h3>
+            <p class="pricing-card__desc">Vende online 24/7 con tu propia tienda integrada con pasarelas de pago
+              internacionales.</p>
+            <div class="pricing-card__price">$479 <span
+                style="font-size:var(--fs-sm);color:var(--text-muted);font-weight:400;">USD</span></div>
+            <div class="pricing-card__payment">Pago único · Entrega en 15 días hábiles</div>
+            <ul class="pricing-card__features">
+              <li>Tienda con hasta 15 productos</li>
+              <li>Pasarela de pagos integrada</li>
+              <li>Hasta 10 secciones personalizadas</li>
+              <li>5 correos corporativos</li>
+              <li>WordPress + WooCommerce</li>
+              <li>Dashboard pedidos y clientes</li>
+              <li>SEO básico optimizado</li>
+              <li>Capacitación para cargar productos</li>
+            </ul>
+            <a href="https://wa.me/593992292199?text=Hola,%20me%20interesa%20el%20plan%20E-commerce" target="_blank"
+              rel="noopener" class="btn btn-outline" style="width:100%;">Solicitar por WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <h2 class="section-header__title">De tu pago a tu web en 4 días hábiles</h2>
+          <p class="section-header__desc">Crear tu página web profesional nunca fue tan sencillo.</p>
+        </div>
+        <div class="grid grid-4 gap-6 stagger">
+          <div class="step-card reveal">
+            <div class="step-card__number">01</div>
+            <h4 class="step-card__title">Pagas de forma segura</h4>
+            <p class="step-card__desc">Confirmación inmediata con instrucciones para comenzar tu página web.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-card__number">02</div>
+            <h4 class="step-card__title">Nos envías tu material</h4>
+            <p class="step-card__desc">Logo, imágenes de tus productos o servicios y el alcance de tu sitio web.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-card__number">03</div>
+            <h4 class="step-card__title">La IA diseña, expertos construyen</h4>
+            <p class="step-card__desc">Nuestro equipo dirige la IA, revisa diseño, copy y SEO, y construye tu web en
+              WordPress.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-card__number">04</div>
+            <h4 class="step-card__title">Tu web queda en vivo</h4>
+            <p class="step-card__desc">Apruebas el diseño, publicamos con dominio y hosting. Capacitación para
+              administrar tu web.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-surface">
+      <div class="container container-narrow">
+        <div class="section-header reveal">
+          <h2 class="section-header__title">Preguntas frecuentes sobre diseño web</h2>
+        </div>
+        <div class="reveal">
+          <div class="faq-item open"><button class="faq-item__q"
+              onclick="this.parentElement.classList.toggle('open')">¿Qué es el diseño de páginas web rentables y para
+              quién está pensado? <span>+</span></button>
+            <div class="faq-item__a">
+              <p>Está orientado a emprendedores, pequeñas empresas y negocios locales que desean tener presencia
+                profesional en internet sin una gran inversión inicial. Incluye diseño responsive, integración con
+                WhatsApp, formularios y SEO básico.</p>
+            </div>
+          </div>
+          <div class="faq-item"><button class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">¿Qué
+              tipos de páginas web ofrece CompuYá? <span>+</span></button>
+            <div class="faq-item__a">
+              <p>Tenemos Landing Page Express IA ($179 USD — 4 días hábiles), Web Completa ($289 USD — 12 días hábiles)
+                y Tienda Virtual E-commerce ($479 USD — 15 días hábiles). Todos incluyen dominio .com y hosting por un
+                año.</p>
+            </div>
+          </div>
+          <div class="faq-item"><button class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">¿La
+              página web la puedo administrar yo mismo? <span>+</span></button>
+            <div class="faq-item__a">
+              <p>Sí. Todas nuestras páginas están en WordPress, el CMS más usado del mundo. Recibes capacitación y un
+                manual de administración en PDF.</p>
+            </div>
+          </div>
+          <div class="faq-item"><button class="faq-item__q"
+              onclick="this.parentElement.classList.toggle('open')">¿Cuánto tiempo tarda en estar lista?
+              <span>+</span></button>
+            <div class="faq-item__a">
+              <p>Express IA en 4 días hábiles, Web Completa en 12 días hábiles y Tienda Virtual en 15 días hábiles. Los
+                tiempos cuentan desde que recibimos todo el material.</p>
+            </div>
+          </div>
+          <div class="faq-item"><button class="faq-item__q"
+              onclick="this.parentElement.classList.toggle('open')">¿Incluye posicionamiento en Google (SEO)?
+              <span>+</span></button>
+            <div class="faq-item__a">
+              <p>Sí. Todos los planes incluyen SEO básico desde el día 1, optimización de velocidad y configuración de
+                Google Search Console.</p>
+            </div>
+          </div>
+          <div class="faq-item"><button class="faq-item__q" onclick="this.parentElement.classList.toggle('open')">¿Qué
+              es el diseño web responsive? <span>+</span></button>
+            <div class="faq-item__a">
+              <p>El diseño web responsive permite que tu sitio se vea perfecto en celulares, tablets y computadoras. Más
+                del 80% del tráfico web proviene de dispositivos móviles.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section section-dark text-center">
+      <div class="container">
+        <h2 style="color:#fff;margin-bottom:var(--space-4);">¿Listo para tener tu página web profesional?</h2>
+        <p style="color:var(--text-on-dark);margin-bottom:var(--space-8);max-width:600px;margin-inline:auto;">Asesoría
+          personalizada para llevar tu marca al siguiente nivel. Escríbenos y comenzamos hoy.</p>
+        <a href="https://wa.me/593992292199?text=Hola,%20quiero%20información%20sobre%20Diseño%20Web" target="_blank"
+          rel="noopener" class="btn btn-primary btn-lg">Hablar con un asesor</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><img src="img/logo.png" alt="CompuYá">
+          <p>Computadores seminuevos y servicios digitales en Ecuador.</p>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Productos</h4>
+          <div class="footer__links"><a href="index.html#ofertas" class="footer__link">Ofertas</a><a
+              href="index.html#computadores" class="footer__link">Computadores</a></div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Servicios</h4>
+          <div class="footer__links"><a href="diseno-web.html" class="footer__link">Diseño Web</a><a
+              href="redes-sociales.html" class="footer__link">Redes Sociales</a><a href="creamos-tu-marca.html"
+              class="footer__link">Branding</a></div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Empresa</h4>
+          <div class="footer__links"><a href="nosotros.html" class="footer__link">Nosotros</a><a href="contacto.html"
+              class="footer__link">Contacto</a></div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© <span id="current-year">2024</span> CompuYá — Ecuador.</p>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/593992292199" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg
+      width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+      <path
+        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+    </svg></a>
+  <button class="scroll-top" aria-label="Volver al inicio"><svg width="20" height="20" fill="none" stroke="currentColor"
+      viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg></button>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Avilchat - Bot de Inteligencia Artificial | CompuYá</title>
+  <meta name="description"
+    content="Automatiza tus ventas y atiende a tus clientes 24/7 con Avilchat. CRM integrado, órdenes en Dropi y seguimiento automático.">
+  <link rel="canonical" href="https://compuya.com.ec/redes-sociales.html">
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css?v=6">
+  <link rel="stylesheet" href="css/base.css?v=6">
+  <link rel="stylesheet" href="css/animations.css?v=6">
+  <link rel="stylesheet" href="css/components.css?v=6">
+  <link rel="stylesheet" href="css/layout.css?v=6">
+  <style>
+    .pricing-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-2xl);
+      border: 1px solid var(--border-light);
+      padding: var(--space-8);
+      display: flex;
+      flex-direction: column;
+      transition: all var(--transition-base);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-card-hover);
+    }
+
+    .pricing-card--popular {
+      border: 2px solid var(--primary);
+      position: relative;
+      transform: scale(1.03);
+    }
+
+    .pricing-card--popular:hover {
+      transform: scale(1.03) translateY(-6px);
+    }
+
+    .pricing-card__badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: #fff;
+      padding: var(--space-1) var(--space-5);
+      border-radius: var(--radius-full);
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--ls-wider);
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .pricing-card__tag {
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--ls-widest);
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: var(--space-3);
+    }
+
+    .pricing-card__title {
+      font-size: var(--fs-xl);
+      font-weight: var(--fw-extrabold);
+      color: var(--primary);
+      margin-bottom: var(--space-3);
+    }
+
+    .pricing-card__desc {
+      color: var(--text-muted);
+      font-size: var(--fs-sm);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--space-6);
+    }
+
+    .pricing-card__price {
+      font-family: var(--font-mono);
+      font-size: var(--fs-3xl);
+      font-weight: var(--fw-extrabold);
+      color: var(--text-primary);
+      margin-bottom: var(--space-1);
+    }
+
+    .pricing-card__payment {
+      font-size: var(--fs-sm);
+      color: var(--text-muted);
+      margin-bottom: var(--space-6);
+      padding-bottom: var(--space-6);
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .pricing-card__features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--space-6);
+      flex: 1;
+    }
+
+    .pricing-card__features li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      margin-bottom: var(--space-3);
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-medium);
+      color: var(--text-secondary);
+    }
+
+    .pricing-card__features li::before {
+      content: "✓";
+      color: var(--primary);
+      font-weight: var(--fw-bold);
+      flex-shrink: 0;
+    }
+
+    .pricing-card__note {
+      padding: var(--space-3) var(--space-4);
+      background: var(--bg-surface);
+      border-left: 3px solid var(--primary);
+      border-radius: var(--radius-sm);
+      font-size: var(--fs-xs);
+      color: var(--text-muted);
+      margin-bottom: var(--space-6);
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-xl);
+      margin-bottom: var(--space-3);
+      overflow: hidden;
+    }
+
+    .faq-item__q {
+      width: 100%;
+      text-align: left;
+      padding: var(--space-5) var(--space-6);
+      font-size: var(--fs-base);
+      font-weight: var(--fw-semibold);
+      color: var(--text-primary);
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-4);
+    }
+
+    .faq-item__q:hover {
+      color: var(--primary);
+    }
+
+    .faq-item__q span {
+      transition: transform var(--transition-base);
+      font-size: var(--fs-lg);
+    }
+
+    .faq-item.open .faq-item__q span {
+      transform: rotate(45deg);
+    }
+
+    .faq-item__a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      padding: 0 var(--space-6);
+    }
+
+    .faq-item.open .faq-item__a {
+      max-height: 500px;
+      padding: 0 var(--space-6) var(--space-5);
+    }
+
+    .faq-item__a p {
+      color: var(--text-muted);
+      font-size: var(--fs-sm);
+      line-height: var(--lh-relaxed);
+    }
+
+    .page-hero {
+      padding-top: calc(var(--header-height) + var(--space-16));
+      padding-bottom: var(--space-12);
+      background: var(--bg-surface);
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+    <header class="header" id="header" role="banner">
+    <div class="container header__inner">
+      <a href="index.html" class="header__logo" aria-label="CompuYá - Inicio">
+        <img src="img/logo.png" alt="CompuYá Logo">
+      </a>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="index.html" class="nav__link">Inicio</a>
+        <a href="index.html#destacados" class="nav__link">Destacados</a>
+        <a href="index.html#computadores" class="nav__link">Computadores</a>
+        <div class="nav__dropdown">
+          <a href="index.html#servicios" class="nav__link">Servicios <svg width="12" height="12" viewBox="0 0 24 24"
+              fill="none" stroke="currentColor" stroke-width="2" style="margin-top: 2px;">
+              <path d="M6 9l6 6 6-6" />
+            </svg></a>
+          <div class="nav__dropdown-content">
+            <a href="diseno-web.html">Diseño Web</a>
+            <a href="redes-sociales.html">Redes Sociales</a>
+            <a href="creamos-tu-marca.html">Creación de Marca</a>
+            <a href="avilchat.html">Avilchat (Bot IA)</a>
+          </div>
+        </div>
+        <a href="index.html#marcas" class="nav__link">Marcas</a>
+        <a href="contacto.html" class="nav__link">Contacto</a>
+      </nav>
+
+      <div class="header__cta">
+        <a href="contacto.html" class="btn btn-primary btn-sm">Cotizar ahora</a>
+        <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Menú móvil">
+    <a href="index.html" class="mobile-nav__link">Inicio</a>
+    <a href="index.html#destacados" class="mobile-nav__link">Destacados</a>
+    <a href="index.html#computadores" class="mobile-nav__link">Computadores</a>
+    <a href="index.html#servicios" class="mobile-nav__link">Servicios</a>
+    <a href="diseno-web.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Diseño Web</a>
+    <a href="redes-sociales.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Redes Sociales</a>
+    <a href="creamos-tu-marca.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Creación de Marca</a>
+    <a href="avilchat.html" class="mobile-nav__link" style="padding-left: 2rem; font-size: 0.9em;">- Avilchat (Bot IA)</a>
+    <a href="index.html#marcas" class="mobile-nav__link">Marcas</a>
+    <a href="contacto.html" class="mobile-nav__link">Contacto</a>
+    <a href="contacto.html" class="btn btn-primary btn-lg" style="margin-top: var(--space-4);">Cotizar ahora</a>
+  </div>
+  
+
+    <main>
+    <section class="page-hero">
+      <div class="container">
+        <span class="overline" style="display:block;margin-bottom:var(--space-3);">BOT DE VENTAS POR WHATSAPP</span>
+        <h1 class="service-hero__title hero-text-enter" style="max-width: 800px; margin: 0 auto;">Tus clientes escriben a las 11 de la noche.<br> <span class="highlight">Alguien les va a contestar.</span></h1>
+        <p class="lead" style="max-width:700px;margin:var(--space-4) auto var(--space-8);">Avilchat responde por tu WhatsApp en segundos, resuelve las dudas, cierra la venta y te deja el pedido armado. Tú duermes.</p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <a href="https://avilchat.com" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Visitar Avilchat.com</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="badge badge--primary" style="margin-bottom:var(--space-3);">Funcionalidades</span>
+          <h2 class="section-header__title">Lo que hace mientras no estás</h2>
+          <p class="section-header__desc">No es un menú de opciones. Es un vendedor que entiende lo que le escriben.</p>
+        </div>
+
+        <div class="grid grid-3 gap-6 stagger">
+          <div class="reason-card reveal">
+            <div class="reason-card__icon" style="background:rgba(255,107,53,.14)">⚡</div>
+            <h4 class="reason-card__title">Atención 24/7</h4>
+            <p class="reason-card__desc">Responde a tus clientes en 2,4 segundos, sin importar la hora.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">🧾</div>
+            <h4 class="reason-card__title">Cobra y verifica</h4>
+            <p class="reason-card__desc">Manda tu medio de pago, recibe el comprobante y lee el monto para que tú solo apruebes.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">📇</div>
+            <h4 class="reason-card__title">CRM Integrado</h4>
+            <p class="reason-card__desc">Cada persona con su estado, su ciudad, su producto y su conversación completa.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">📦</div>
+            <h4 class="reason-card__title">Pedidos en Dropi, solos</h4>
+            <p class="reason-card__desc">Toma los datos, valida la ciudad y deja la orden puesta en Dropi sin que tú intervengas.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">🔁</div>
+            <h4 class="reason-card__title">Vuelve por el que se enfrió</h4>
+            <p class="reason-card__desc">Al que dejó de responder le escribe otra vez para retomar lo que estaban hablando.</p>
+          </div>
+          <div class="reason-card reveal">
+            <div class="reason-card__icon">💬</div>
+            <h4 class="reason-card__title">Entra tú cuando quieras</h4>
+            <p class="reason-card__desc">Cuando el cliente pide una persona, el bot se calla y te reenvía la conversación.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cierre" style="padding: var(--space-12) 0; text-align: center; background: var(--bg-surface);">
+      <div class="container">
+        <h2 style="margin-bottom: var(--space-4);">El bot que vende por tu WhatsApp mientras duermes</h2>
+        <p class="lead" style="margin-bottom: var(--space-8); max-width: 700px; margin-left: auto; margin-right: auto;">Conecta tu WhatsApp y deja que el bot venda. Planes desde $14 al mes con 300 respuestas gratis para probar.</p>
+        <a href="https://avilchat.com" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Más detalles y precios en Avilchat.com →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand"><img src="img/logo.png" alt="CompuYá">
+          <p>Computadores seminuevos y servicios digitales en Ecuador.</p>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Productos</h4>
+          <div class="footer__links"><a href="index.html#ofertas" class="footer__link">Ofertas</a><a
+              href="index.html#computadores" class="footer__link">Computadores</a></div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Servicios</h4>
+          <div class="footer__links"><a href="diseno-web.html" class="footer__link">Diseño Web</a><a
+              href="redes-sociales.html" class="footer__link">Redes Sociales</a><a href="creamos-tu-marca.html"
+              class="footer__link">Branding</a></div>
+        </div>
+        <div>
+          <h4 class="footer__col-title">Empresa</h4>
+          <div class="footer__links"><a href="nosotros.html" class="footer__link">Nosotros</a><a href="contacto.html"
+              class="footer__link">Contacto</a></div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© <span id="current-year">2024</span> CompuYá — Ecuador.</p>
+      </div>
+    </div>
+  </footer>
+  <a href="https://wa.me/593992292199" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp"><svg
+      width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
+      <path
+        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z" />
+    </svg></a>
+  <button class="scroll-top" aria-label="Subir"><svg width="20" height="20" fill="none" stroke="currentColor"
+      viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg></button>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
